@@ -1342,6 +1342,8 @@
                 item = new StructureMeteorViewModel(this, structureBase as StructureMeteorModel);
             else if (structureBase is StructureInventoryBagModel)
                 item = new StructureInventoryBagViewModel(this, structureBase as StructureInventoryBagModel);
+            else if (structureBase is StructureSafeZoneModel)
+                item = new StructureSafeZoneViewModel(this, structureBase as StructureSafeZoneModel);
             else if (structureBase is StructureUnknownModel)
                 item = new StructureUnknownViewModel(this, structureBase as StructureUnknownModel);
             else
@@ -1682,6 +1684,10 @@
                 {
                     // Too complex to export without work to package the data,
                     _dialogService.ShowMessageBox(this, Res.ClsExportPlanet, Res.ClsExportTitleFailed, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+                }
+                else if (viewModel is StructureSafeZoneViewModel)
+                {
+                    _dialogService.ShowMessageBox(this, Res.ClsExportSafeZone, Res.ClsExportTitleFailed, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
                 }
                 else if (viewModel is StructureUnknownViewModel)
                 {

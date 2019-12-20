@@ -20,6 +20,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>
@@ -260,6 +261,7 @@
     <Compile Include="Models\GroupMoveModel.cs" />
     <Compile Include="Models\StructureMeteorModel.cs" />
     <Compile Include="Models\StructureInventoryBagModel.cs" />
+    <Compile Include="Models\StructureSafeZoneModel.cs" />
     <Compile Include="Models\StructureUnknownModel.cs" />
     <Compile Include="Models\OreAssetModel.cs" />
     <Compile Include="Models\CubeAssetModel.cs" />
@@ -382,6 +384,7 @@
     <Compile Include="ViewModels\GroupMoveViewModel.cs" />
     <Compile Include="ViewModels\StructureMeteorViewModel.cs" />
     <Compile Include="ViewModels\StructureInventoryBagViewModel.cs" />
+    <Compile Include="ViewModels\StructureSafeZoneViewModel.cs" />
     <Compile Include="ViewModels\StructureUnknownViewModel.cs" />
     <Compile Include="ViewModels\GenerateVoxelFieldViewModel.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
@@ -414,6 +417,9 @@
     </Compile>
     <Compile Include="Views\ControlPlanet.xaml.cs">
       <DependentUpon>ControlPlanet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlSafeZone.xaml.cs">
+      <DependentUpon>ControlSafeZone.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ControlVoxel.xaml.cs">
       <DependentUpon>ControlVoxel.xaml</DependentUpon>
@@ -534,6 +540,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ControlPlanet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ControlSafeZone.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

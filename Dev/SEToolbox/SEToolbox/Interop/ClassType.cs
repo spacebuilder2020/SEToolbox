@@ -12,7 +12,8 @@
         Meteor,
         Voxel,
         Planet,
-        InventoryBag
+        InventoryBag,
+        SafeZone
     };
 
     public enum ImportModelClassType

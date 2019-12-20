@@ -3085,4 +3085,10 @@ Reason: {1}</value>
   <data name="DialogNoNetworkTitle" xml:space="preserve">
     <value>Can not find update</value>
   </data>
+  <data name="CtlSafeZoneTitle" xml:space="preserve">
+    <value>SafeZone -</value>
+  </data>
+  <data name="ClsExportSafeZone" xml:space="preserve">
+    <value>Cannot export SafeZone currently</value>
+  </data>
 </root>

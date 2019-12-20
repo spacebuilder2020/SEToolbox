@@ -527,6 +527,15 @@ namespace SEToolbox.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot export SafeZone currently.
+        /// </summary>
+        public static string ClsExportSafeZone {
+            get {
+                return ResourceManager.GetString("ClsExportSafeZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot export.
         /// </summary>
         public static string ClsExportTitleFailed {
@@ -3020,6 +3029,15 @@ namespace SEToolbox.Properties {
         public static string CtlPositionZTooltip {
             get {
                 return ResourceManager.GetString("CtlPositionZTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SafeZone -.
+        /// </summary>
+        public static string CtlSafeZoneTitle {
+            get {
+                return ResourceManager.GetString("CtlSafeZoneTitle", resourceCulture);
             }
         }
         

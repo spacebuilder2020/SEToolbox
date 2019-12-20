@@ -803,6 +803,12 @@
                     var entity = AddEntity(inventoryBag.EntityBase);
                     entity.EntityId = MergeId(inventoryBag.EntityId, ref idReplacementTable);
                 }
+                else if (item is StructureSafeZoneModel)
+                {
+                    var safeZone = item as StructureSafeZoneModel;
+                    var entity = AddEntity(safeZone.EntityBase);
+                    entity.EntityId = MergeId(safeZone.EntityId, ref idReplacementTable);
+                }
                 else if (item is StructureUnknownModel)
                 {
                     var unknown = item as StructureUnknownModel;
