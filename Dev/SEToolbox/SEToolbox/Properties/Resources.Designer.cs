@@ -3033,7 +3033,34 @@ namespace SEToolbox.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SafeZone -.
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string CtlSafeZoneName {
+            get {
+                return ResourceManager.GetString("CtlSafeZoneName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position:.
+        /// </summary>
+        public static string CtlSafeZonePosition {
+            get {
+                return ResourceManager.GetString("CtlSafeZonePosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radius:.
+        /// </summary>
+        public static string CtlSafeZoneRadius {
+            get {
+                return ResourceManager.GetString("CtlSafeZoneRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SafeZone.
         /// </summary>
         public static string CtlSafeZoneTitle {
             get {

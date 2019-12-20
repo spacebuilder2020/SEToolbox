@@ -17,13 +17,50 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-            <Label Content="{lex:Loc CtlSafeZoneTitle}"/>
-            <TextBlock VerticalAlignment="Center" Text="{Binding DisplayName}" />
-        </StackPanel>
-        <Label Grid.Row="1" Grid.Column="0" Content="{lex:Loc CtlUnknownPosition}"/>
-        <views:ControlPosition Grid.Row="1" Grid.Column="1"/>
+        <Label Grid.ColumnSpan="2" Content="{lex:Loc CtlSafeZoneTitle}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneName}"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Name}"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" Content="{lex:Loc CtlSafeZonePosition}"/>
+        <views:ControlPosition Grid.Row="2" Grid.Column="1"/>
+        
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneShape}"/>
+        <ComboBox Grid.Row="3" ItemsSource="{Binding MySafeZoneShapes}" Grid.Column="1" HorizontalAlignment="Stretch" SelectedItem="{Binding Shape, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneRadius}"/>
+        <DockPanel Grid.Row="4" Grid.Column="1">
+            <Label DockPanel.Dock="Right" Content="{lex:Loc GlobalSIDistanceMetre}"/>
+            <TextBox HorizontalAlignment="Stretch" Text="{Binding Radius, StringFormat='#,###0.00', Mode=TwoWay}"/>            
+        </DockPanel>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="{lex:Loc CtlSafeZoneSize}"/>
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding SizeX, StringFormat='#,###0.00', Mode=TwoWay}"/>
+            <TextBox Grid.Column="1"  HorizontalAlignment="Stretch" Text="{Binding SizeY, StringFormat='#,###0.00', Mode=TwoWay}"/>
+            <TextBox Grid.Column="2"  HorizontalAlignment="Stretch" Text="{Binding SizeZ, StringFormat='#,###0.00', Mode=TwoWay}"/>
+        </Grid>
+        
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneEnabled}"/>
+        <CheckBox Grid.Row="6" Grid.Column="1" IsChecked="{Binding Enabled, Mode=TwoWay}"/>
+        
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneVisble}"/>
+        <CheckBox Grid.Row="7" Grid.Column="1" IsChecked="{Binding IsVisible, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Margin="4 0 4 0" Text="{lex:Loc CtlSafeZoneBlockId}"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SafeZoneBlockId}"/>
     </Grid>
 </UserControl>

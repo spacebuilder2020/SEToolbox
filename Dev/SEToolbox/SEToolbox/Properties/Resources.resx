@@ -3086,9 +3086,18 @@ Reason: {1}</value>
     <value>Can not find update</value>
   </data>
   <data name="CtlSafeZoneTitle" xml:space="preserve">
-    <value>SafeZone -</value>
+    <value>SafeZone</value>
   </data>
   <data name="ClsExportSafeZone" xml:space="preserve">
     <value>Cannot export SafeZone currently</value>
+  </data>
+  <data name="CtlSafeZonePosition" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="CtlSafeZoneRadius" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="CtlSafeZoneName" xml:space="preserve">
+    <value>Name:</value>
   </data>
 </root>
