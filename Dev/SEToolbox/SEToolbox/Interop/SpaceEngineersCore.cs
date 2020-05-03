@@ -32,7 +32,7 @@
             public DerivedGame(string[] commandlineArgs, IntPtr windowHandle = default)
                 : base(commandlineArgs, windowHandle) { }
 
-            protected override void InitiliazeRender(IntPtr windowHandle) { }
+            protected override void InitializeRender(IntPtr windowHandle) { }
         }
 
         protected static readonly uint AppId = 244850; // Game
@@ -81,9 +81,12 @@
 
             SpaceEngineersGame.SetupPerGameSettings();
 
-            VRageRender.MyRenderProxy.Initialize(new MyNullRender());
-
             VRage.MyVRage.Init(new ToolboxPlatform());
+            VRage.MyVRage.Platform.Init();
+
+            MySandboxGame.InitMultithreading();
+
+            VRageRender.MyRenderProxy.Initialize(new MyNullRender());
 
             // We create a whole instance of MySandboxGame!
             // If this is causing an exception, then there is a missing dependency.
@@ -98,6 +101,7 @@
             var mySession = (Sandbox.Game.World.MySession)FormatterServices.GetUninitializedObject(typeof(Sandbox.Game.World.MySession));
 
             // Required as the above code doesn't populate it during ctor of MySession.
+            ReflectionUtil.ConstructField(mySession, "m_creativeTools");
             ReflectionUtil.ConstructField(mySession, "m_sessionComponents");
             ReflectionUtil.ConstructField(mySession, "m_sessionComponentsForUpdate");
 
@@ -113,9 +117,6 @@
             mySession.RegisterComponent(heightMapLoadingSystem, heightMapLoadingSystem.UpdateOrder, heightMapLoadingSystem.Priority);
             heightMapLoadingSystem.LoadData();
 
-            MyHeightMapLoadingSystem.Static = new MyHeightMapLoadingSystem();
-            MyHeightMapLoadingSystem.Static.LoadData();
-
             _stockDefinitions = new SpaceEngineersResources();
             _stockDefinitions.LoadDefinitions();
             _manageDeleteVoxelList = new List<string>();
@@ -126,6 +127,8 @@
         /// </summary>
         public static void LoadDefinitions()
         {
+            typeof(MyTexts).TypeInitializer.Invoke(null, null); // For tests
+
             Default = new SpaceEngineersCore();
         }
 
